@@ -6,7 +6,7 @@ body {
 .grid-container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 5fr;
     grid-template-areas: 
     'nav status'
@@ -14,18 +14,112 @@ body {
     ;
 }
 
-.grid-container div {
-    border: 4px solid black;
-}
 
 .nav-bar {
     grid-area: nav;
+    display: grid;
+    grid-template-rows: 1fr 2fr 3fr;
+    background-color: rgb(33, 135, 169);
+    color: rgb(252, 252, 252);
 }
 
 .status-bar {
     grid-area: status;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    'search active-user'
+    'welcome buttons'
+    ;
+}
+
+.search {
+    grid-area: search;
+}
+
+.welcome {
+    grid-area: welcome;
+}
+
+.active-user {
+    grid-area: active-user;
+}
+
+.buttons {
+    grid-area: buttons;
+}
+
+button {
+    background-color: rgb(33, 135, 169);
+    border-style: none;
+    border-radius: 20px;
+    color: white;
+    padding: 8px 20px 8px 20px;
 }
 
 .main-container {
     grid-area: main;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+    'projects announcements'
+    'projects trending'
+    ;
+    gap: 30px;
+    background-color: rgba(233, 227, 227, 0.889);
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.projects .title {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.projects .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.projects .cards div {
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+}
+
+
+.announcements {
+    grid-area: announcements;
+}
+
+.announcements .title {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.announcements .content {
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.trending .title {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.trending .content {
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
 }
